@@ -1,5 +1,4 @@
 #include "ps.h"
-#include <stdio.h>
 
 void add_all(stack *s, int argc, char **args)
 {
@@ -20,10 +19,7 @@ void print_stack(stack *s)
 	current = s->lst;
 	while (current != NULL)
 	{
-		/*
-		**	TO DO: replace with ft_putbnr();
-		*/
-		printf("%d\n", current->data);
+		ft_putnbr(current->data);
 		current = current->next;
 	}
 }

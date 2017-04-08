@@ -4,7 +4,6 @@ int	rotate_sort(stack *s, bool print, bool checker)
 {
 	int count;
 	int first;
-	node *current;
 
 	count = 0;
 	if (s->lst == NULL)
@@ -40,7 +39,6 @@ int	reverse_sort(stack *s, bool print, bool checker)
 {
 	int count;
 	int first;
-	node *current;
 
 	count = 0;
 	if (s->lst == NULL)

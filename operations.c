@@ -49,7 +49,6 @@ void swap(stack *s)
 void push(stack *remove_top, stack *insert_top)
 {
 	node *new_top;
-	node *old_top;
 
 	if (remove_top->lst == NULL)
 		return ;

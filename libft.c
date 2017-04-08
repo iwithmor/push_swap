@@ -1,4 +1,5 @@
 #include "ps.h"
+#include <stdio.h>
 
 /*
 **  TO DO: replace with libft.a
@@ -31,5 +32,6 @@ void    ft_putstr(char *s)
 }
 void    ft_putnbr(int num)
 {
-    return ;
+    // TO DO: replace with ft_putbnr();
+    printf("%d\n", num);
 }

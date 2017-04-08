@@ -41,11 +41,15 @@ bool isnum(char *s)
 	if (ft_strlen(s) > 10)
 	{
 		if (s[0] == '-')
+		{
 			if (!greater_than_min(s))
 				return false ;
+		}
 		else if (s[0] == '+')
+		{
 			if (!less_than_max(s))
 				return false ;
+		}
 		else
 			return false ;
 	}

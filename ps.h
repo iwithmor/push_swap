@@ -30,5 +30,20 @@ stack	*new_stack();
 bool	is_empty(stack *s);
 bool	is_sorted(stack *s);
 void	push_swap(stack *a, stack *b, bool print, bool checker);
+int		get_min(stack *s);
+void	add_all(stack *s, int argc, char **args);
+int		size(stack *s);
+void 	reverse_rotate(stack *s);
+void 	rotate(stack *s);
+void 	swap(stack *s);
+void 	push(stack *remove_top, stack *insert_top);
+int		insertion_sort(stack *a, stack *b, bool print);
+int		push_all(stack *b, stack *a, bool print);
+int 	last(stack *s);
+void 	add(stack *s, int data);
+int		rotate_sort(stack *s, bool print, bool checker);
+int		reverse_sort(stack *s, bool print, bool checker);
+void 	rotate_reset(int first, stack *s);
+void 	reverse_reset(int first, stack *s);
 
 #endif

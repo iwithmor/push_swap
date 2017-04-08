@@ -1,18 +1,22 @@
 NAME_PS	= push_swap
 NAME_CH = checker
 
-SRC = algorithms.c new.c number_check.c operations.c reset.c special_cases.c stack.c
-SRC_PS = push_swap.c
-SRC_CH = checker.c
+SRC = algorithms.c new.c number_check.c operations.c \
+reset.c special_cases.c stack.c push_swap.c checker.c \
+libft.c
 
-OBJ_PS = $(SRC_PS:.c=.o) $(SRC:.c=.o)
-OBJ_CH = $(SRC_CH:.c=.o) $(SRC:.c=.o)
+SRC_PS = main_ps.c
+SRC_CH = main_ch.c
 
-FLAGS	= -Wall -Wextra -Werror
+OBJ = $(SRC:.c=.o)
+OBJ_PS = $(SRC_PS:.c=.o)
+OBJ_CH = $(SRC_CH:.c=.o)
+
+FLAGS = -Wall -Wextra -Werror
 
 #LIBFT	= ./libft/libft.a
 
-all: libft $(NAME_PS) $(NAME_CH)
+all: $(NAME_PS) $(NAME_CH)
 
 #libft: $(LIBFT)
 
@@ -20,23 +24,21 @@ all: libft $(NAME_PS) $(NAME_CH)
 #	make -C ./libft
 
 $(NAME_CH): $(OBJ_CH) $(OBJ)
-	cc $(FLAGS) -o $(NAME_CH) $(OBJ_CH)
+	cc $(FLAGS) -o $(NAME_CH) $(OBJ_CH) $(OBJ)
 
-$(NAME_PS): $(OBJ_PS)
-	cc $(FLAGS) -o $(NAME_PS) $(OBJ_PS)
+$(NAME_PS): $(OBJ_PS) $(OBJ)
+	cc $(FLAGS) -o $(NAME_PS) $(OBJ_PS) $(OBJ)
 
 $(OBJ):
 	cc $(FLAGS) -c $(SRC)
 
 clean:
-	rm -rf $(OBJ)
-	make -C ./libft clean
+	rm -rf $(OBJ) $(OBJ_PS) $(OBJ_CH)
+#	make -C ./libft clean
 
 fclean: clean
 	rm -rf $(NAME_PS)
 	rm -rf $(NAME_CH)
-	make -C ./libft fclean
+#	make -C ./libft fclean
 
 re: fclean all
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status HelpMakefile
