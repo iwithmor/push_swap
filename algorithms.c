@@ -2,7 +2,6 @@
 
 int	insertion_sort(stack *a, stack *b, bool print)
 {
-	ft_putstr("Let's try insertion.\n");
 	int min;
 	int count;
 
